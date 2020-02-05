@@ -17,7 +17,7 @@ $consulta = mysqli_query($conexion, "SELECT * FROM peliculas");
 	
  <table>
   <tbody>
-	  <th>
+	  <tr>
 		  <td>ID</td>
 		  <td>Título</td>
 		  <td>Lanzamiento</td>
@@ -27,12 +27,13 @@ $consulta = mysqli_query($conexion, "SELECT * FROM peliculas");
 		  <td>Categoría</td>
 		  <td>Clasificación</td>
 		  <td>Póster</td>
-          </th>
+		  <td>Eliminar</td>
+          </tr>
 	  <?php
 	  while ($resultado = mysqli_fetch_assoc($consulta)){
 	    echo "<tr>";
 	    echo "<td>" . $resultado['id_pelicula'] . "</td>";
-	    echo "<td>" . $resultado['titulo'] . "</td>";
+	    echo "<td><a href='editar.php?id=" . $resultado['id_pelicula'] . "'> " . $resultado['titulo'] . "</a></td>";
 	    echo "<td>" . $resultado['lanzamiento'] . "</td>";
 	    echo "<td>" . $resultado['direccion'] . "</td>";
 	    echo "<td>" . $resultado['casting'] . "</td>";
@@ -40,6 +41,7 @@ $consulta = mysqli_query($conexion, "SELECT * FROM peliculas");
 	    echo "<td>" . $resultado['categoria'] . "</td>";
 	    echo "<td>" . $resultado['clasificacion'] . "</td>";
 	    echo "<td><img width='150' src='../img/posters/" . $resultado['poster'] . "'></td>";
+	    echo "<td><a href='includes/eliminar.php?id=" . $resultado['id_pelicula'] . "'> Eliminar </a></td>";
 	    echo "</tr>";
 	  }	
 	  ?>
