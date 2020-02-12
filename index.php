@@ -4,6 +4,7 @@ include_once("includes/conexion.php");
 	
 //EJECUTA UNA CONSULTA UTILIZANDO LA CONEXIÓN A BASE DE DATOS
 $consulta = mysqli_query($conexion, "SELECT * FROM peliculas");
+
 	
 ?>
 <!DOCTYPE html>
@@ -52,6 +53,13 @@ $consulta = mysqli_query($conexion, "SELECT * FROM peliculas");
 		?>
 	</div>
 </section>
+
+<!-- INCLUIMOS LA SECCIÓN DE LA CATEGORÍA DRAMA -->
+<?php include_once("includes/drama.php"); ?>
+
+<!-- INCLUIMOS LA SECCIÓN DE LA CATEGORÍA TERROR -->
+<?php include_once("includes/terror.php"); ?>
+
 
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
